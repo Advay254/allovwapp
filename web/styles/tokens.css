@@ -1,0 +1,41 @@
+:root {
+  /* Brand */
+  --allov-green: #25d366;
+  --allov-green-deep: #128c7e;
+  --allov-green-text: #0b6b5f;
+  --allov-blue: #246bfe;
+  --allov-blue-text: #1d5fe8;
+  --allov-cyan: #0090c2;
+  --allov-cyan-text: #00769e;
+
+  /* Neutrals */
+  --allov-ink: #0b1220;
+  --allov-muted: #4b5768;
+  --allov-bg: #f7f9fc;
+  --allov-surface: #ffffff;
+  --allov-border: #dce3ed;
+  --allov-border-strong: #7c8aa0;
+
+  /* Status */
+  --allov-success: #128c56;
+  --allov-success-text: #0f7a4a;
+  --allov-warning: #9a6400;
+  --allov-danger: #c8343f;
+
+  /* Soft backgrounds for banners. Text on them is always ink. */
+  --allov-info-bg: #eaf1ff;
+  --allov-warning-bg: #fff6e5;
+  --allov-danger-bg: #fdecee;
+  --allov-success-bg: #e8f6ee;
+
+  /* Shape and depth */
+  --allov-shadow-card: 0 1px 2px rgba(11, 18, 32, 0.06);
+  --allov-shadow-pop: 0 8px 24px rgba(11, 18, 32, 0.12);
+
+  /* Type */
+  --allov-font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --allov-font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --allov-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  color-scheme: light;
+}
