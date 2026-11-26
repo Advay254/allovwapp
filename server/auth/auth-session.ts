@@ -1,4 +1,4 @@
-import { and, eq, gt, isNull, lt, ne } from 'drizzle-orm';
+import { and, desc, eq, gt, isNull, lt, ne } from 'drizzle-orm';
 import {
   SESSION_COOKIE_PLAIN,
   SESSION_COOKIE_SECURE,
@@ -151,18 +151,16 @@ export async function listSessions(
     })
     .from(authSessions)
     .where(and(eq(authSessions.userId, userId), gt(authSessions.expiresAt, now)))
-    .orderBy(authSessions.lastSeenAt)
+    .orderBy(desc(authSessions.lastSeenAt))
     .limit(50);
-  return rows
-    .map((row) => ({
-      id: row.id,
-      userAgent: row.userAgent,
-      ip: row.ip,
-      createdAt: row.createdAt.toISOString(),
-      lastSeenAt: row.lastSeenAt.toISOString(),
-      current: row.id === currentSessionId,
-    }))
-    .reverse();
+  return rows.map((row) => ({
+    id: row.id,
+    userAgent: row.userAgent,
+    ip: row.ip,
+    createdAt: row.createdAt.toISOString(),
+    lastSeenAt: row.lastSeenAt.toISOString(),
+    current: row.id === currentSessionId,
+  }));
 }
 
 /** Used by the maintenance sweep. Removes only sessions that have already expired. */
